@@ -1,0 +1,20 @@
+<h1>Shift Schedule</h1>
+<br>
+<p>Hi {{staff.first_name}}, </p>
+<br>
+<p>Kindly find below your upcoming schedules.</p>
+<br> <br>
+<table style = "border: 1px solid black;padding:10px">
+    <tr>
+        <th style = "border: 1px solid black;padding:10px">Day</th>
+        <th style = "border: 1px solid black;padding:10px">Date</th>
+        <th style = "border: 1px solid black;padding:10px">Time</th>
+    </tr>
+    {% for attendance in attendances %}
+    <tr>
+        <td style = "border: 1px solid black;padding:10px">{{attendance.day}}</td>
+        <td style = "border: 1px solid black;padding:10px">{{attendance.start_date_time.date}}</td>
+        <td style = "border: 1px solid black;padding:10px">{{attendance.start_date_time.time}}</td>
+    </tr>
+    {% endfor %}
+</table>
